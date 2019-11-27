@@ -1,0 +1,26 @@
+<h1>Listing Pets</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+<%= for pet <- @pets do %>
+    <tr>
+      <td><%= pet.name %></td>
+
+      <td>
+        <span><%= link "Show", to: Routes.pet_path(@conn, :show, pet) %></span>
+        <span><%= link "Edit", to: Routes.pet_path(@conn, :edit, pet) %></span>
+        <span><%= link "Delete", to: Routes.pet_path(@conn, :delete, pet), method: :delete, data: [confirm: "Are you sure?"] %></span>
+      </td>
+    </tr>
+<% end %>
+  </tbody>
+</table>
+
+<span><%= link "New Pet", to: Routes.pet_path(@conn, :new) %></span>

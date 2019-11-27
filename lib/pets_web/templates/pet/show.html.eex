@@ -1,0 +1,13 @@
+<h1>Show Pet</h1>
+
+<ul>
+
+  <li>
+    <strong>Name:</strong>
+    <%= @pet.name %>
+  </li>
+
+</ul>
+
+<span><%= link "Edit", to: Routes.pet_path(@conn, :edit, @pet) %></span>
+<span><%= link "Back", to: Routes.pet_path(@conn, :index) %></span>
